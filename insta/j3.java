@@ -1,9 +1,9 @@
-public class j1
+public class j3
 {
 static void fun(int n){
 for(int i=0;i<n;i++){
 for(int j=0;j<n;j++){
-if(i-j>=0)
+if(i+j<n)
 System.out.print("*");
 else
 System.out.print(" ");
