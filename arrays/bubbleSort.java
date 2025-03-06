@@ -17,7 +17,7 @@ class bubbleSort{
 
     }
     public static void main(String []args){
-        int arr[]={2,8,1,7,4,9};
+        int arr[]={0,0,2,8,1,7,4,9};
         fun(arr);
 
     }
