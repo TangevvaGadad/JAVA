@@ -1,5 +1,5 @@
     public class revWord{
-            static void wordrev(char a[]){
+        static void wordrev(char a[]){
         int n=a.length;
         int s=0;
 
