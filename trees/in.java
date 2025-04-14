@@ -12,7 +12,8 @@
         this.right=null;
     }
     }
-class pre{
+class in{
+
     public static void main(String[] args){
         Node root=new Node(1);
         root.left=new Node(2);
@@ -21,26 +22,33 @@ class pre{
         root.left.right=new Node(5);
         root.right.left=new Node(6);
         root.right.right=new Node(7);
-        preorder(root);
+        inorder(root);
                 System.out.println();
+        in(root);
 
     }
+    public static void in(Node root){
+    if(root!=null){
+        in(root.left);
+        System.out.print(root.data);
+        in(root.right);
+    }
+}
 
 
-public static void preorder(Node root){
+public static void inorder(Node root){
     Stack<Node> stack = new Stack<>();
-    stack.push(root);
+    Node t=root;
 
-    while(!stack.isEmpty()){
-       Node node=stack.pop();
+    while(t!=null || !stack.isEmpty()){
+        while(t!=null){
+            stack.push(t);
+            t=t.left;
+        }
+        Node node=stack.pop();
         System.out.print(node.data+" ");
-
-        if(node.right!=null)
-            stack.push(node.right);
-        if(node.left!=null)
-            stack.push(node.left);
-    }
-
+        t=node.right;
+        }
 }
 
 
