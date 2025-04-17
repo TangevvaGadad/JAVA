@@ -21,18 +21,19 @@ class delete{
         root.right.left=new Node(6);
         root.right.right=new Node(7);
 
-
+        delete(root,7);
+        inorder(root);
 
 }
 public static void inorder(Node root){
     if(root!=null){
         inorder(root.left);
-        System.out.print(root.data);
+        System.out.print(root.data+" ");
         inorder(root.right);
     }
 }
 
-public static void delete(Node root,int key){
+public static Node delete(Node root,int key){
     if(root==null)
         return null;
     if(key<root.data)
@@ -48,7 +49,9 @@ public static void delete(Node root,int key){
         while(t!=null){
             t=t.left;
         }
+        root.data=t.data;
+        root.right=delete(root.right,t.data);
     }
-
+    return root;
 }
 }
