@@ -49,9 +49,14 @@ class heap{
             arr.set(smallest,temp);
             heapifydown(arr,smallest);
         }
-
     }
-    void 
+
+    int remove(){
+        this.heap.set(1,this.heap.size());
+        this.heap.remove(this.heap.size()-1);
+        heapifyup_max(this.heap,1);
+        return root;
+    }
     public static void main(String args[]){
 
     }
